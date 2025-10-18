@@ -11,14 +11,12 @@ object ConsoleView : View {
         return Console.readLine()
     }
 
-    override fun printResult(result: Double) {
-        val resultString = if (result % 1.0 == 0.0) {
-            result.toInt().toString()
-        } else {
-            result.toString()
-        }
-        println("$RESULT_PREFIX$resultString")
-    }
+    override fun printResult(result: Double) =
+        println("$RESULT_PREFIX${printFormatter(result)}")
 
     override fun printError(message: String?) = println(message)
+
+    private fun printFormatter(result: Double): String =
+        if (result % 1.0 != 0.0) result.toString() else result.toInt().toString()
+
 }
