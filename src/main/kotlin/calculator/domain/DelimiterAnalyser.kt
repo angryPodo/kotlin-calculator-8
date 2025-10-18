@@ -2,7 +2,7 @@ package calculator.domain
 
 object DelimiterAnalyser {
     private val DEFAULT_DELIMITERS = listOf(",", ":")
-    private val CUSTOM_DELIMITER_REGEX = Regex("//(.)\n(.*)")
+    private val CUSTOM_DELIMITER_REGEX = Regex("""^//(.)\\n(.*)$""")
 
     fun analyse(expression: String?): ExpressionParts {
         if (expression.isNullOrBlank()) return ExpressionParts("", DEFAULT_DELIMITERS)
