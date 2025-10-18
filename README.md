@@ -1,12 +1,16 @@
 # kotlin-calculator-precourse
 
-## 기능 목록
+## 서비스 소개
+양수의 문자열을 구분자와 함꼐 입력받아 합을 구하는 문자열 덧셈 계산이 서비스입니다.
+
+## 구현할 기능 목록
 
 *   **[ ] View 구현:** 사용자와의 입출력을 담당하는 `View` 인터페이스와 `ConsoleView` 구현체를 작성한다.
 *   **[ ] DelimiterAnalyser (구분자 분석기) 구현:** 입력 문자열을 분석하여, 숫자 부분과 구분자 정보를 담은 `ExpressionParts` 객체를 생성한다.
 *   **[ ] NumberConverter (숫자 변환기) 구현:** `ExpressionParts`를 입력받아, 문자열을 검증하고 `Double` 숫자 목록으로 변환한다.
 *   **[ ] Calculator (계산기) 구현:** `Double` 숫자 목록의 합계를 계산한다.
 *   **[ ] Application (통합) 구현:** 구현된 `View`와 `Domain` 객체들을 조합하여 전체 애플리케이션의 동작을 관장한다.
+*   **[ ] TestCode 구현:** 구현 완료된 서비스의 다양한 케이스를 테스트 하기 위한 코드를 추가한다.
 
 ## 고민과 결정
 
