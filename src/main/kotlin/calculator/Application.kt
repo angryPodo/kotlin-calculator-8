@@ -22,7 +22,7 @@ fun main() {
 
         view.printResult(result)
 
-    }.onFailure {
-        view.printError(it.message)
+    }.onFailure { exception ->
+        throw exception
     }
 }
