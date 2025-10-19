@@ -22,6 +22,45 @@ class ApplicationTest : NsTest() {
         }
     }
 
+    @Test
+    fun `쉼표_구분자_테스트`() {
+        assertSimpleTest {
+            run("1,2,3")
+            assertThat(output()).contains("결과 : 6")
+        }
+    }
+
+    @Test
+    fun `쉼표와_콜론_구분자_테스트`() {
+        assertSimpleTest {
+            run("1,2:3")
+            assertThat(output()).contains("결과 : 6")
+        }
+    }
+
+    @Test
+    fun `복합_커스텀_구분자_테스트`() {
+        assertSimpleTest {
+            run("//;\\n1,2;3")
+            assertThat(output()).contains("결과 : 6")
+        }
+    }
+
+    @Test
+    fun `빈_문자열_테스트`() {
+        assertSimpleTest {
+            run(" ")
+            assertThat(output()).contains("결과 : 0")
+        }
+    }
+
+    @Test
+    fun `숫자_아닌_값_예외_테스트`() {
+        assertSimpleTest {
+            assertThrows<IllegalArgumentException> { runException("1,a,2") }
+        }
+    }
+
     override fun runMain() {
         main()
     }
